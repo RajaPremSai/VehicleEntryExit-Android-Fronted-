@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Vehicle Entry Exit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enter_the_4_digit_code_that_was_sent_to_your_email_address">Please enter the 4-digit code that was sent to your email address.</string>
+    <string name="i_didn_t_receive_the_code_resend">I didn\'t receive the code! Resend</string>
+    <string name="verify_and_proceed">Verify and Proceed</string>
+    <string name="email_verification">Email Verification</string>
+    <string name="back">Back</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="enter_the_email_address_associated_with_your_account">Enter the email address associated with your account.</string>
+    <string name="recover_password">Recover Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="your_new_password_must_be_different_from_previously_used_passwords">Your new password must be different from previously used passwords.</string>
+    <string name="done">Done</string>
+    <string name="backbtn"><![CDATA[<]]></string>
+    <string name="enter_your_new_password">Enter your new password</string>
+    <string name="renter_your_new_password">Renter_your_new_password</string>
+    <string name="renter_new_password">Renter new password</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+    <string name="personal_information">PERSONAL INFORMATION</string>
+    <string name="current_password">Current Password</string>
+</resources>
