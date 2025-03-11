@@ -22,4 +22,6 @@
     <string name="close">Close Navigation Drawer</string>
     <string name="personal_information">PERSONAL INFORMATION</string>
     <string name="current_password">Current Password</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
 </resources>

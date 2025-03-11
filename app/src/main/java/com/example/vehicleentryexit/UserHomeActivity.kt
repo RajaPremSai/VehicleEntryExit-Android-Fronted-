@@ -1,5 +1,6 @@
 package com.example.vehicleentryexit
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -110,6 +111,9 @@ class UserHomeActivity : AppCompatActivity() {
                     val intent = Intent(this, SGAnnoucementsActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.action_logout -> {
+                    logout()
+                }
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
@@ -121,6 +125,16 @@ class UserHomeActivity : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+    }
+
+    private fun logout() {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit().clear().apply() // Clear all stored data
+
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Clear back stack
+        startActivity(intent)
+        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

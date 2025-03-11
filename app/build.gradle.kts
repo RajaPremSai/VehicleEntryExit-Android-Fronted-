@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.appdistribution.gradle)
     implementation(libs.androidx.media3.common.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,5 +69,5 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // OkHttp for network logging
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 }
