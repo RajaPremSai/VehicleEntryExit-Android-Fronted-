@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sg.SGScanBarcodeFragment"
+    tools:context=".sg.VehicleDetailsFragment"
     android:background="#E0E0E0">
 
     <!-- Title Bar -->
@@ -175,6 +175,7 @@
         tools:ignore="MissingConstraints" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="123dp"
         android:layout_height="103dp"
         android:layout_marginStart="68dp"

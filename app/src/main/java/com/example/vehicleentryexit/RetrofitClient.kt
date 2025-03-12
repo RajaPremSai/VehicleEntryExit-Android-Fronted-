@@ -1,7 +1,6 @@
 package com.example.vehicleentryexit
 
-//package com.example.vehicleentryexit
-
+import android.content.Context
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,6 +17,22 @@ object RetrofitClient {
             .build()
 
         Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+            .create(ApiService::class.java)
+    }
+
+    // For authenticated API calls
+    fun getAuthenticatedApiService(context: Context): ApiService {
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+        val client = OkHttpClient.Builder()
+            .addInterceptor(logging)
+            .addInterceptor(AuthInterceptor(context))
+            .build()
+        return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)

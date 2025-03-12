@@ -70,4 +70,14 @@ dependencies {
 
     // OkHttp for network logging
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    // ML Kit Barcode Scanning
+    implementation("com.google.mlkit:barcode-scanning:17.2.0") // Check for the latest version
+    implementation("androidx.camera:camera-camera2:1.3.0")
+    implementation("androidx.camera:camera-lifecycle:1.3.0")
+    implementation("androidx.camera:camera-view:1.3.0")
+
+    // Zxing Barcode Generation
+    implementation("com.google.zxing:core:3.5.2")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
 }
