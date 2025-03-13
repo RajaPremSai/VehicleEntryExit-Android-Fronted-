@@ -75,9 +75,11 @@ class LoginActivity : AppCompatActivity() {
                             val loginResponse = response.body()
                             val token = loginResponse?.token
                             val role = loginResponse?.role
+                            val userEmail = loginResponse?.email
 
                             if (token != null && role != null) {
-                                sharedPreferences.edit().putString("token", token).putString("role", role).apply()
+                                sharedPreferences.edit().putString("token", token).putString("role", role).putString("email", userEmail).apply()
+                                Toast.makeText(this@LoginActivity, "${userEmail}-szbfksf", Toast.LENGTH_SHORT).show()
                                 navigateToRoleSpecificActivity(role)
                             } else {
                                 Toast.makeText(this@LoginActivity, "Login failed: Invalid token or role", Toast.LENGTH_SHORT).show()
