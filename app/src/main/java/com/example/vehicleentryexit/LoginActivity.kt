@@ -32,39 +32,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         // Sign In button click listener
-//        binding.btnSignIn.setOnClickListener {
-//            val email = binding.etEmail.text.toString().trim()
-//            val password = binding.etPassword.text.toString().trim()
-//
-//            if (validateInputs(email, password)) {
-//                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-//
-//                // Determine which activity to navigate to based on email
-//                when (email) {
-//                    "sg@cutmap.ac.in" -> {
-//                        val intent = Intent(this, SGHomeActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//                    "admin@cutmap.ac.in" -> {
-//                        val intent = Intent(this, AdminHomeActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//                    "user@cutmap.ac.in" -> {
-//                        val intent = Intent(this, UserHomeActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//                    else -> {
-//                        Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//
-//                // Finish the current activity to prevent back navigation
-//                finish()
-//            }
-//        }
-
         binding.btnSignIn.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim()
+            val email = binding.etEmail.text.toString().trim() // Get email from EditText
             val password = binding.etPassword.text.toString().trim()
 
             if (validateInputs(email, password)) {
@@ -75,11 +44,13 @@ class LoginActivity : AppCompatActivity() {
                             val loginResponse = response.body()
                             val token = loginResponse?.token
                             val role = loginResponse?.role
-                            val userEmail = loginResponse?.email
 
                             if (token != null && role != null) {
-                                sharedPreferences.edit().putString("token", token).putString("role", role).putString("email", userEmail).apply()
-                                Toast.makeText(this@LoginActivity, "${userEmail}-szbfksf", Toast.LENGTH_SHORT).show()
+                                sharedPreferences.edit()
+                                    .putString("token", token)
+                                    .putString("role", role)
+                                    .putString("email", email) // Store email from EditText
+                                    .apply()
                                 navigateToRoleSpecificActivity(role)
                             } else {
                                 Toast.makeText(this@LoginActivity, "Login failed: Invalid token or role", Toast.LENGTH_SHORT).show()
@@ -95,9 +66,43 @@ class LoginActivity : AppCompatActivity() {
                     }
                 })
             }
-
-
         }
+
+//        binding.btnSignIn.setOnClickListener {
+//            val email = binding.etEmail.text.toString().trim()
+//            val password = binding.etPassword.text.toString().trim()
+//
+//            if (validateInputs(email, password)) {
+//                val request = LoginRequest(email, password)
+//                RetrofitClient.apiService.login(request).enqueue(object : Callback<LoginResponse> {
+//                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+//                        if (response.isSuccessful) {
+//                            val loginResponse = response.body()
+//                            val token = loginResponse?.token
+//                            val role = loginResponse?.role
+//                            val userEmail = loginResponse?.email
+//
+//                            if (token != null && role != null) {
+//                                sharedPreferences.edit().putString("token", token).putString("role", role).putString("email", userEmail).apply()
+//                                Toast.makeText(this@LoginActivity, "${userEmail}-szbfksf", Toast.LENGTH_SHORT).show()
+//                                navigateToRoleSpecificActivity(role)
+//                            } else {
+//                                Toast.makeText(this@LoginActivity, "Login failed: Invalid token or role", Toast.LENGTH_SHORT).show()
+//                            }
+//
+//                        } else {
+//                            Toast.makeText(this@LoginActivity, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//                        Toast.makeText(this@LoginActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+//                    }
+//                })
+//            }
+//
+//
+//        }
 
         // Sign Up button click listener - Navigates to Register.kt
         binding.btnSignUp.setOnClickListener {
@@ -150,3 +155,36 @@ class LoginActivity : AppCompatActivity() {
         return isValid
     }
 }
+
+
+
+//        binding.btnSignIn.setOnClickListener {
+//            val email = binding.etEmail.text.toString().trim()
+//            val password = binding.etPassword.text.toString().trim()
+//
+//            if (validateInputs(email, password)) {
+//                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+//
+//                // Determine which activity to navigate to based on email
+//                when (email) {
+//                    "sg@cutmap.ac.in" -> {
+//                        val intent = Intent(this, SGHomeActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//                    "admin@cutmap.ac.in" -> {
+//                        val intent = Intent(this, AdminHomeActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//                    "user@cutmap.ac.in" -> {
+//                        val intent = Intent(this, UserHomeActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//                    else -> {
+//                        Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//
+//                // Finish the current activity to prevent back navigation
+//                finish()
+//            }
+//        }

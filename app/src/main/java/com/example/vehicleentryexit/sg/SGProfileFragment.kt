@@ -2,6 +2,7 @@ package com.example.vehicleentryexit.sg
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,10 +52,10 @@ class SGProfileFragment : Fragment() {
         etPhoneNumber = view.findViewById(R.id.etPhoneNumber)
 
         // Find the back button and set its click listener
-        val backButton: Button = view.findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
-        }
+//        val backButton: Button = view.findViewById(R.id.backButton)
+//        backButton.setOnClickListener {
+//            requireActivity().onBackPressedDispatcher.onBackPressed()
+//        }
 
         fetchSGDetails()
 
@@ -68,11 +69,20 @@ class SGProfileFragment : Fragment() {
         if (email != null) {
             val apiService = RetrofitClient.getAuthenticatedApiService(requireContext())
             apiService.getSecurityGuardByEmail(email).enqueue(object : Callback<SecurityGuard> {
+//                override fun onResponse(call: Call<SecurityGuard>, response: Response<SecurityGuard>) {
+//                    if (response.isSuccessful && response.body() != null) {
+//                        updateUI(response.body()!!)
+//                    } else {
+//                        Toast.makeText(requireContext(), "Failed to retrieve data", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+
                 override fun onResponse(call: Call<SecurityGuard>, response: Response<SecurityGuard>) {
+                    Log.d("SGDetailsFragment", "Response code: ${response.code()}") // Log response code
                     if (response.isSuccessful && response.body() != null) {
                         updateUI(response.body()!!)
                     } else {
-                        Toast.makeText(requireContext(), "Failed to retrieve data", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Failed to retrieve data. Code: ${response.code()}", Toast.LENGTH_SHORT).show() // Include code in toast
                     }
                 }
 

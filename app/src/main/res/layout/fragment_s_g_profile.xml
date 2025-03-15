@@ -21,15 +21,15 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="46dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/Moccasine"
-                android:padding="0dp"
-                android:text="@string/backbtn"
-                android:textColor="#E65100"
-                android:textSize="18sp" />
+<!--            <Button-->
+<!--                android:id="@+id/backButton"-->
+<!--                android:layout_width="46dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/Moccasine"-->
+<!--                android:padding="0dp"-->
+<!--                android:text="@string/backbtn"-->
+<!--                android:textColor="#E65100"-->
+<!--                android:textSize="18sp" />-->
 
             <TextView
                 android:id="@+id/textView4"

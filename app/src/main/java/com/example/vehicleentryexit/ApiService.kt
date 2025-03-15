@@ -32,7 +32,7 @@ interface ApiService {
     @GET("api/security-guard/logs")
     fun getLogs(): Call<List<LogDTO>>
 
-    @GET("api/security-guard/email/{email}")
+    @GET("api/security-guard/profile/email/{email}")
     fun getSecurityGuardByEmail(@Path("email") email: String): Call<SGProfileFragment.SecurityGuard>
 
 }
