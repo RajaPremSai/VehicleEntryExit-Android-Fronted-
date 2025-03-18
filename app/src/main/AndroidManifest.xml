@@ -4,7 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -18,8 +21,16 @@
         android:theme="@style/Theme.VehicleEntryExit"
         tools:targetApi="31">
         <activity
-            android:name=".sg.MainActivity2"
+            android:name=".EditVehicleActivity"
             android:exported="false" />
+        <activity
+            android:name=".IndividualVehicleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddVehicleActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".sg.MainActivity2" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".UserLogsActivity"
             android:exported="false" />
@@ -28,9 +39,11 @@
             android:exported="false" />
         <activity
             android:name=".UserProfileActivity"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".UserAnnouncementsActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
-            android:name=".SGAnnoucementsActivity"
+            android:name=".UserAnnouncementsActivity"
             android:exported="false" />
         <activity
             android:name=".AdminHomeActivity"

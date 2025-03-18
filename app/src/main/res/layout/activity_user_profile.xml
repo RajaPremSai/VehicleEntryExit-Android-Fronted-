@@ -9,9 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-
-        >
+        android:orientation="vertical">
 
         <!-- Top Bar Layout -->
         <LinearLayout
@@ -44,21 +42,21 @@
                 android:textStyle="bold"
                 android:layout_weight="10" />
 
-            <com.google.android.material.button.MaterialButton
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/btnEdit"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:icon="@drawable/ic_edit_pen"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="#666666"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                app:cornerRadius="20dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:padding="0dp"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                android:id="@+id/btnEdit"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                app:icon="@drawable/ic_edit_pen"-->
+<!--                app:iconGravity="textStart"-->
+<!--                app:iconPadding="0dp"-->
+<!--                app:iconTint="#666666"-->
+<!--                android:insetTop="0dp"-->
+<!--                android:insetBottom="0dp"-->
+<!--                app:cornerRadius="20dp"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                android:padding="0dp"/>-->
         </LinearLayout>
 
         <!-- Personal Information Card -->
@@ -95,8 +93,8 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/profilePicture"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:src="@drawable/ic_user_type"
                         app:shapeAppearanceOverlay="@style/CircleImageView"/>
 
@@ -106,148 +104,201 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <EditText
+<!--                        <EditText-->
+<!--                            android:id="@+id/etName"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Name"-->
+<!--                            android:background="@null"-->
+<!--                            android:inputType="text"/>-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/etIDEmployee"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="ID/Employee"-->
+<!--                            android:background="@null"-->
+<!--                            android:inputType="text"/>-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/etUserType"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="User Type"-->
+<!--                            android:background="@null"-->
+<!--                            android:inputType="text"/>-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/etPhoneNumber"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Phone Number"-->
+<!--                            android:background="@null"-->
+<!--                            android:inputType="phone"/>-->
+                        <TextView
                             android:id="@+id/etName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Name"
-                            android:background="@null"
-                            android:inputType="text"/>
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="20sp"/>
 
-                        <EditText
+                        <TextView
                             android:id="@+id/etIDEmployee"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="ID/Employee"
-                            android:background="@null"
-                            android:inputType="text"/>
+                            android:hint="Employee Id / Reg No"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="20sp"/>
 
-                        <EditText
+<!--                        <TextView-->
+<!--                            android:id="@+id/etIdSG"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Security Guard ID"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_marginBottom="8dp"-->
+<!--                            android:textSize="20sp"/>-->
+
+                        <TextView
                             android:id="@+id/etUserType"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="User Type"
-                            android:background="@null"
-                            android:inputType="text"/>
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="20sp"/>
 
-                        <EditText
+                        <TextView
+                            android:id="@+id/etEmailId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email Id"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
                             android:id="@+id/etPhoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Phone Number"
-                            android:background="@null"
-                            android:inputType="phone"/>
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="20sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Account Information Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            app:cardElevation="4dp">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardCornerRadius="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            app:cardElevation="4dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
 
-                android:padding="16dp">
+<!--                android:padding="16dp">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ACCOUNT INFORMATION"
-                    android:textColor="#FFA500"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="ACCOUNT INFORMATION"-->
+<!--                    android:textColor="#FFA500"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_marginBottom="8dp"/>-->
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email Address"
-                    android:background="@null"
-                    android:inputType="textEmailAddress"/>
+<!--                <EditText-->
+<!--                    android:id="@+id/etEmail"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Email Address"-->
+<!--                    android:background="@null"-->
+<!--                    android:inputType="textEmailAddress"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Password"
-                    android:layout_marginTop="8dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Password"-->
+<!--                    android:layout_marginTop="8dp"/>-->
 
-                <EditText
-                    android:id="@+id/etCurrentPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/current_password"
-                    android:inputType="textPassword"
-                    android:background="@null"/>
+<!--                <EditText-->
+<!--                    android:id="@+id/etCurrentPassword"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="@string/current_password"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:background="@null"/>-->
 
-                <EditText
-                    android:id="@+id/etNewPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="New Password"
-                    android:inputType="textPassword"
-                    android:background="@null"/>
+<!--                <EditText-->
+<!--                    android:id="@+id/etNewPassword"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="New Password"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:background="@null"/>-->
 
-                <EditText
-                    android:id="@+id/etConfirmPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Confirm New Password"
-                    android:inputType="textPassword"
-                    android:background="@null"/>
+<!--                <EditText-->
+<!--                    android:id="@+id/etConfirmPassword"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Confirm New Password"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:background="@null"/>-->
 
-                <LinearLayout
-                    android:id="@+id/passwordValidationLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="8dp"
-                    android:visibility="gone">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/passwordValidationLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:visibility="gone">-->
 
-                    <TextView
-                        android:id="@+id/tvPasswordNoMatch"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="• Password do not match"
-                        android:textColor="#FF0000"
-                        android:drawablePadding="8dp"/>
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvPasswordNoMatch"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="• Password do not match"-->
+<!--                        android:textColor="#FF0000"-->
+<!--                        android:drawablePadding="8dp"/>-->
 
-                    <TextView
-                        android:id="@+id/tvPasswordLength"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="• At least 8 characters"
-                        android:textColor="#FF0000"
-                        android:drawablePadding="8dp"/>
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvPasswordLength"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="• At least 8 characters"-->
+<!--                        android:textColor="#FF0000"-->
+<!--                        android:drawablePadding="8dp"/>-->
 
-                    <TextView
-                        android:id="@+id/tvPasswordComplexity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="• Do some-special character combination"
-                        android:textColor="#FF0000"
-                        android:drawablePadding="8dp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvPasswordComplexity"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="• Do some-special character combination"-->
+<!--                        android:textColor="#FF0000"-->
+<!--                        android:drawablePadding="8dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
 
         <!-- Save Changes Button -->
-        <Button
-            android:id="@+id/btnSaveChanges"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SAVE CHANGES"
-            android:textColor="@android:color/black"
-            android:backgroundTint="@color/orange"
-            android:layout_marginTop="16dp"
-            android:padding="12dp"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnSaveChanges"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="SAVE CHANGES"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:backgroundTint="@color/orange"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:padding="12dp"/>-->
     </LinearLayout>
 </ScrollView>

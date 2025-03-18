@@ -47,8 +47,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAnnouncements"
         android:layout_width="match_parent"
-        android:layout_height="725dp"
+        android:layout_height="669dp"
+        android:layout_below="@+id/topBar"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         android:background="#FFFAF0"
         android:padding="8dp" />
 

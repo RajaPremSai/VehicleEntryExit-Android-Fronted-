@@ -78,6 +78,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 class UserHomeActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var profileIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,10 +87,16 @@ class UserHomeActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawer_layout)
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         val menuIcon: ImageView = findViewById(R.id.menuIcon)
+        val profileIcon: ImageView = findViewById(R.id.imageView2)
 
         // Set click listener on the menu icon to open the drawer
         menuIcon.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        profileIcon.setOnClickListener{
+            val intent = Intent(this, UserProfileActivity::class.java)
+            startActivity(intent)
         }
 
         // Handle navigation item clicks
@@ -108,7 +115,7 @@ class UserHomeActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.nav_announcements -> {
-                    val intent = Intent(this, SGAnnoucementsActivity::class.java)
+                    val intent = Intent(this, UserAnnouncementsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.action_logout -> {
@@ -156,5 +163,6 @@ class UserHomeActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
 }
 
