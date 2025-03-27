@@ -123,4 +123,7 @@ interface ApiService {
         @Path("vehicleNumber") vehicleNumber: String,
         @Body vehicleDTO: UniversityVehicleDTO
     ): Call<UniversityVehicle>
+
+    @GET("api/manager/logs")
+    fun getLogs1(): Call<List<LogDTO>>
 }
