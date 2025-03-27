@@ -4,8 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.WindowInsetsAnimation
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vehicleentryexit.databinding.ActivityLoginBinding
 import com.example.vehicleentryexit.models.auth.LoginRequest
@@ -30,9 +34,36 @@ class LoginActivity : AppCompatActivity() {
 //        setupListeners()
     }
 
+    private fun showTermsAndConditionsDialog() {
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.terms_and_conditions_dialog, null)
+        val dialogBuilder = AlertDialog.Builder(this)
+            .setView(dialogView)
+
+        val dialog = dialogBuilder.create()
+        dialog.show()
+
+        val agreeButton = dialogView.findViewById<Button>(R.id.agreeButton)
+        val termsTextView = dialogView.findViewById<TextView>(R.id.termsTextView)
+
+        // Set your terms and conditions here
+        termsTextView.text = """
+            Terms and Conditions:
+            1. Rule 1: ...
+            2. Rule 2: ...
+            3. Rule 3: ...
+            ...
+        """.trimIndent()
+
+        agreeButton.setOnClickListener {
+            binding.agreeBtn.isChecked = true
+            dialog.dismiss()
+        }
+    }
+
     private fun setupListeners() {
         // Sign In button click listener
         binding.btnSignIn.setOnClickListener {
+            if (binding.agreeBtn.isChecked) {
             val email = binding.etEmail.text.toString().trim() // Get email from EditText
             val password = binding.etPassword.text.toString().trim()
 
@@ -69,11 +100,14 @@ class LoginActivity : AppCompatActivity() {
                     }
                 })
             }
+        } else {
+            Toast.makeText(this@LoginActivity, "Please agree to Terms and Conditions", Toast.LENGTH_SHORT).show()
+        }
         }
 
 //        binding.btnSignIn.setOnClickListener {
-//            val email = binding.etEmail.text.toString().trim()
-//            val password = binding.etPassword.text.toString().trim()
+//            val email = binding.etEmail.text.securityGuardId().trim()
+//            val password = binding.etPassword.text.securityGuardId().trim()
 //
 //            if (validateInputs(email, password)) {
 //                val request = LoginRequest(email, password)
@@ -117,6 +151,10 @@ class LoginActivity : AppCompatActivity() {
         binding.tvForgotPassword.setOnClickListener {
             // Navigate to forgot password activity
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
+        binding.agreeBtn.setOnClickListener {
+            showTermsAndConditionsDialog()
         }
     }
 
@@ -162,8 +200,8 @@ class LoginActivity : AppCompatActivity() {
 
 
 //        binding.btnSignIn.setOnClickListener {
-//            val email = binding.etEmail.text.toString().trim()
-//            val password = binding.etPassword.text.toString().trim()
+//            val email = binding.etEmail.text.securityGuardId().trim()
+//            val password = binding.etPassword.text.securityGuardId().trim()
 //
 //            if (validateInputs(email, password)) {
 //                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()

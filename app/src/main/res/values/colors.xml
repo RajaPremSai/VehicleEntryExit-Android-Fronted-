@@ -11,4 +11,7 @@
     <color name="Moccasine">#FFE4B5</color>
     <color name="green">#4CAF50</color>
     <color name="red">#FF0000</color>
+    <color name="forest_green">#228B22</color>
+    <color name="navy_blue">#007BFF</color>
+    <color name="sky_blue">#87CEEB</color>
 </resources>

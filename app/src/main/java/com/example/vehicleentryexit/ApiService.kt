@@ -1,8 +1,15 @@
 package com.example.vehicleentryexit
 
+import com.example.vehicleentryexit.models.Announcement
 import com.example.vehicleentryexit.models.AnnouncementDTO
+import com.example.vehicleentryexit.models.Gate
+import com.example.vehicleentryexit.models.GateDTO
 import com.example.vehicleentryexit.models.Log
 import com.example.vehicleentryexit.models.LogDTO
+import com.example.vehicleentryexit.models.SecurityGuard
+import com.example.vehicleentryexit.models.SecurityGuardDTO
+import com.example.vehicleentryexit.models.UniversityVehicle
+import com.example.vehicleentryexit.models.UniversityVehicleDTO
 import com.example.vehicleentryexit.models.UserDTO
 import com.example.vehicleentryexit.models.Vehicle
 import com.example.vehicleentryexit.models.VehicleDTO
@@ -63,4 +70,57 @@ interface ApiService {
         @Path("vehicleNumber") vehicleNumber: String,
         @Body vehicleDTO: VehicleDTO
     ): Call<Vehicle>
+
+
+    //Manager Security Guards
+    @GET("api/manager/security-guards")
+    fun getGuards(): Call<List<SecurityGuard>>
+
+    @GET("api/manager/security-guards/{securityGuardId}")
+    fun getSecurityGuard(@Path("securityGuardId") securityGuardId: String): Call<SecurityGuard>
+
+    @POST("api/manager/security-guards")
+    fun addSecurityGuard(@Body securityGuardDTO: SecurityGuardDTO): Call<SecurityGuard>
+
+    @PUT("api/manager/security-guards/{securityGuardId}")
+    fun updateSecurityGuard(
+        @Path("securityGuardId") securityGuardId: String,
+        @Body securityGuardDTO: SecurityGuardDTO
+    ): Call<SecurityGuard>
+
+    @DELETE("api/manager/{securityGuardId}")
+    fun deleteSecurityGuard(@Path("securityGuardId") securityGuardId: String): Call<Void>
+
+    @POST("api/manager/announcements")
+    fun addAnnouncement(@Body announcementDTO: AnnouncementDTO): Call<Announcement>
+
+    @DELETE("api/manager/announcements/{announcementId}")
+    fun deleteAnnouncement(@Path("announcementId") announcementId: String): Call<Void>
+
+    @GET("api/manager/announcements")
+    fun getAnnouncements(): Call<List<Announcement>>
+
+    @POST("api/manager/add-gates")
+    fun addGates(@Body gateDTO: GateDTO): Call<Gate>
+
+    @GET("api/manager/gates")
+    fun getGates(): Call<List<Gate>>
+
+    @DELETE("api/manager/gates/{gateNumber}")
+    fun deleteGates(@Path("gateNumber") gateNumber: String): Call<Void>
+
+    @GET("api/manager/university-vehicles")
+    fun getUniversityVehicles(): Call<List<UniversityVehicle>>
+
+    @POST("api/manager/add-university-vehicles")
+    fun addUniversityVehicle(@Body vehicleDTO: UniversityVehicleDTO): Call<UniversityVehicle>
+
+    @DELETE("api/manager/delete-university-vehicles/{vehicleNumber}")
+    fun deleteUniversityVehicle(@Path("vehicleNumber") vehicleNumber: String): Call<Void>
+
+    @PUT("api/manager/university-vehicles/{vehicleNumber}")
+    fun editUniversityVehicle(
+        @Path("vehicleNumber") vehicleNumber: String,
+        @Body vehicleDTO: UniversityVehicleDTO
+    ): Call<UniversityVehicle>
 }

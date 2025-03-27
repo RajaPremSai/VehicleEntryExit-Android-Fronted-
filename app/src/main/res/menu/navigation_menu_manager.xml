@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home" android:title="Home" />
+    <item android:id="@+id/nav_profile" android:title="Profile" />
+    <item android:id="@+id/nav_logs" android:title="Logs" />
+<!--    <item android:id="@+id/nav_users" android:title="Users" />-->
+    <item android:id="@+id/nav_sg" android:title="Security Guards" />
+<!--    <item android:id="@+id/nav_vehicles" android:title="Vehicles" />-->
+    <item android:id="@+id/nav_uni_vehicles" android:title="University Vehicles" />
+    <item android:id="@+id/nav_announcements" android:title="Announcements" />
+    <item android:id="@+id/nav_gates" android:title="Gates" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout" />
+</menu>
